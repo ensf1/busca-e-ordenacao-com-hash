@@ -26,7 +26,7 @@ def new_contact():
 def main():
     unordered_contacts_list = UnorderedList()
     ordered_contacts_list = OrderedList()
-    hash_contacts_list = HashTable(2)
+    hash_contacts_list = HashTable(10)
 
     menu_message()
     while (op := int(input())) != 9:
@@ -73,7 +73,7 @@ def main():
             print(f'{name} está na lista não ordenada!' if unordered_contacts_list.search(name) else f'Não existe {name} na lista não ordenada!')
             print(f'{name} está na lista ordenada!' if ordered_contacts_list.search(name) else f'Não existe {name} na lista ordenada!')
             # print(hash_contacts_list.get(name))
-            # print(f'{name} está na HashTable!' if hash_contacts_list.get(name) else f'Não existe {name} na HashTable!')
+            print(f'{name} está na HashTable!' if hash_contacts_list.get(name) else f'Não existe {name} na HashTable!')
 
         elif op == 3:
             # print('1 - Remover na lista não ordenada')
@@ -83,8 +83,7 @@ def main():
             #     print('Opção inválida, escolha outra\n')
             print('Qual o nome da pessoa que você deseja remover?')
             # name = input()
-            name = 'abc'
-            print()
+            name = 'teste'
             # if op3 == 1:
             if unordered_contacts_list.remove(name):
                 print(f'Lista não ordenada após a remoção de {name}:[ {unordered_contacts_list}]')
@@ -94,6 +93,10 @@ def main():
                 print(f'Lista ordenada após a remoção de {name}:[ {ordered_contacts_list}]')
             else:
                 print(f'Não existe {name} na lista ordenada')
+            if hash_contacts_list.delete(name):
+                print(f'Hash após remoção de {name}:[ {hash_contacts_list}]')
+            else:
+                print(f'Não existe {name} na HashTable')
 
         else:
             print('Opção inválida, escolha outra\n')
