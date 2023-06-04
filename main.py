@@ -2,6 +2,7 @@ from Contact import Contact
 from HashTable import HashTable
 from Node import Node
 from OrderedList import OrderedList
+from PerformanceTests import tests_report
 from UnorderedList import UnorderedList
 
 
@@ -10,6 +11,7 @@ def menu_message():
     print('1 - Inserir contato')
     print('2 - Pesquisar contato')
     print('3 - Remover contato\n')
+    print('4 - Teste com timeit')
     print('Escolha uma opção acima ou aperte 9 para sair:\n')
 
 
@@ -97,6 +99,9 @@ def main():
                 print(f'Hash após remoção de {name}:[ {hash_contacts_list}]')
             else:
                 print(f'Não existe {name} na HashTable')
+
+        elif op == 4:
+            tests_report()
 
         else:
             print('Opção inválida, escolha outra\n')
