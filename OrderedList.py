@@ -44,7 +44,7 @@ class OrderedList:
         while cur.getNext() is not None and repr(cur.getData()) <= node:
             if repr(cur.getData()) == node:
                 return True
-            cur = cur.proximo
+            cur = cur.getNext()
         return False
 
     def remove(self, node):
